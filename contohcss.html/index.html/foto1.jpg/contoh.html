@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toko Online</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Segoe UI',Arial,sans-serif;
+    background:#f5f5f5;
+    color:#333;
+  }
+
+  /* ===== HEADER ===== */
+  header{
+    background:#ff5722;
+    color:#fff;
+    padding:14px 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  header h1{font-size:1.4rem;font-weight:600;}
+  .search-bar{display:flex;}
+  .search-bar input{
+    width:250px;padding:8px;border:none;border-radius:4px 0 0 4px;outline:none;
+  }
+  .search-bar button{
+    background:#ff784e;color:#fff;border:none;padding:8px 15px;border-radius:0 4px 4px 0;cursor:pointer;
+  }
+  .cart-btn{
+    background:#fff;color:#ff5722;border:none;font-size:1.2rem;padding:6px 12px;border-radius:4px;cursor:pointer;
+  }
+
+  /* ===== GRID PRODUK ===== */
+  .container{max-width:1250px;margin:0 auto;padding:25px;}
+  .product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+    gap:25px; /* jarak antar kartu */
+    margin-top:10px;
+  }
+  .product-card{
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:6px;
+    overflow:hidden;
+    position:relative;
+    transition:box-shadow 0.3s;
+  }
+  .product-card:hover{box-shadow:0 4px 12px rgba(0,0,0,0.15);}
+  .product-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    transition:transform 0.4s;
+  }
+  .product-card:hover img{transform:scale(1.05);}
+  .info{padding:10px;}
+  .info h3{font-size:1rem;margin-bottom:4px;line-height:1.2;}
+
+  /* Harga */
+  .price{color:#ff5722;font-weight:600;font-size:1rem;}
+  .old-price{font-size:0.8rem;color:#888;text-decoration:line-through;margin-left:5px;}
+
+  /* Rating */
+  .rating{font-size:0.8rem;color:#ffc107;margin:4px 0;}
+
+  /* Tombol Beli */
+  .add-to-cart{
+    display:block;width:100%;text-align:center;margin-top:8px;
+    padding:7px 0;background:#ff5722;color:#fff;border:none;cursor:pointer;border-radius:4px;font-size:0.9rem;
+  }
+  .add-to-cart:hover{background:#e64a19;}
+
+  /* Badge Diskon */
+  .badge{
+    position:absolute;top:8px;left:8px;
+    background:#f44336;color:#fff;font-size:0.7rem;padding:2px 6px;border-radius:4px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Tokoku</h1>
+  <div class="search-bar">
+    <input type="text" placeholder="Cari produk...">
+    <button>Cari</button>
+  </div>
+  <button class="cart-btn">🛒</button>
+</header>
+
+<div class="container">
+  <main class="product-grid">
+
+    <!-- PRODUK 1 -->
+    <div class="product-card">
+      <span class="badge">-10%</span>
+      <img src="Cuplikan layar 2025-09-05 220035.png" alt="Tas Pancing Jumbo">
+      <div class="info">
+        <h3>Tas Pancing Jumbo Tegak</h3>
+        <div class="rating">★★★★★ (12)</div>
+        <p><span class="price">Rp 150.000</span><span class="old-price">Rp 165.000</span></p>
+        <button class="add-to-cart">Beli</button>
+      </div>
+    </div>
+
+    <!-- PRODUK 2 -->
+    <div class="product-card">
+      <span class="badge">HOT</span>
+      <img src="Cuplikan layar 2025-09-05 100013.png" alt="Senar Pancing">
+      <div class="info">
+        <h3>Senar Pancing Super</h3>
+        <div class="rating">★★★★☆ (30)</div>
+        <p><span class="price">Rp 300.000</span></p>
+        <button class="add-to-cart">Beli</button>
+      </div>
+    </div>
+
+    <!-- PRODUK 3 -->
+    <div class="product-card">
+      <img src="Cuplikan layar 2025-09-05 215638.png" alt="Ril Simano">
+      <div class="info">
+        <h3>Ril Simano 20kg</h3>
+        <div class="rating">★★★★★ (8)</div>
+        <p><span class="price">Rp 3.000.000</span></p>
+        <button class="add-to-cart">Beli</button>
+      </div>
+    </div>
+
+    <!-- PRODUK 4 -->
+    <div class="product-card">
+      <span class="badge">Promo</span>
+      <img src="Cuplikan layar 2025-09-05 215825.png" alt="Umpan Mainan">
+      <div class="info">
+        <h3>Umpan Mainan 4–8 inch</h3>
+        <div class="rating">★★★☆☆ (5)</div>
+        <p><span class="price">Rp 200.000</span></p>
+        <button class="add-to-cart">Beli</button>
+      </div>
+    </div>
+
+    <!-- PRODUK 5 -->
+    <div class="product-card">
+      <img src="Cuplikan layar 2025-09-05 100236.png" alt="Joran Capung">
+      <div class="info">
+        <h3>Joran Capung 120–205cm</h3>
+        <div class="rating">★★★★☆ (14)</div>
+        <p><span class="price">Rp 2.000.000</span></p>
+        <button class="add-to-cart">Beli</button>
+      </div>
+    </div>
+
+    <!-- PRODUK 6 -->
+    <div class="product-card">
+      <span class="badge">1+1</span>
+      <img src="Cuplikan layar 2025-09-07 101021.png" alt="Boneka Lucu">
+      <div class="info">
+        <h3>Boneka Lucu</h3>
+        <div class="rating">★★★★★ (21)</div>
+        <p><span class="price">Rp 50.000</span><span class="old-price">Rp 60.000</span></p>
+        <button class="add-to-cart">Beli</button>
+      </div>
+    </div>
+
+    
+    <div class="product-card">
+      <span class="badge">Diskon</span>
+      <img src="Cuplikan layar 2025-09-09 110553.png" alt="sabun cuci muka bagus">
+      <div class="info">
+        <h3>sabun cuci muka bagis (Copy)</h3>
+        <div class="rating">★★★★★ (12)</div>
+        <p><span class="price">Rp 150.000</span><span class="old-price">Rp 165.000</span></p>
+        <button class="add-to-cart">Beli</button>
+      </div>
+    </div>
+
+    
+    <div class="product-card">
+      <img src="Cuplikan layar 2025-09-09 110852.png" alt="koja wader">
+      <div class="info">
+        <h3>koja wader  (Copy)</h3>
+        <div class="rating">★★★★★ (8)</div>
+        <p><span class="price">Rp 3.000.000</span></p>
+        <button class="add-to-cart">Beli</button>
+      </div>
+    </div>
+
+    
+    <div class="product-card">
+      <span class="badge">HOT</span>
+      <img src="Cuplikan layar 2025-09-09 111108.png" alt="alat pancing 1 set">
+      <div class="info">
+        <h3>alat pancing 1 set (Copy)</h3>
+        <div class="rating">★★★★☆ (30)</div>
+        <p><span class="price">Rp 300.000</span></p>
+        <button class="add-to-cart">Beli</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>
